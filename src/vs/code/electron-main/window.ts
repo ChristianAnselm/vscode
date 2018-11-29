@@ -466,7 +466,7 @@ export class CodeWindow extends Disposable implements ICodeWindow {
 
 	private registerNavigationListenerOn(command: 'swipe' | 'app-command', back: 'left' | 'browser-backward', forward: 'right' | 'browser-forward', acrossEditors: boolean) {
 		this._win.on(command as 'swipe' /* | 'app-command' */, (e: Electron.Event, cmd: string) => {
-			if (!this.isReady) {
+			if (this._readyState !== ReadyState.READY) {
 				return; // window must be ready
 			}
 

@@ -16,11 +16,11 @@ import { LifecyclePhase } from 'vs/platform/lifecycle/common/lifecycle';
 
 const workbench = Registry.as<IWorkbenchContributionsRegistry>(WorkbenchExtensions.Workbench);
 
-workbench.registerWorkbenchContribution(ProductContribution, LifecyclePhase.Restored);
+workbench.registerWorkbenchContribution(ProductContribution, LifecyclePhase.Running);
 
 if (platform.isWindows) {
 	if (process.arch === 'ia32') {
-		workbench.registerWorkbenchContribution(Win3264BitContribution, LifecyclePhase.Restored);
+		workbench.registerWorkbenchContribution(Win3264BitContribution, LifecyclePhase.Running);
 	}
 }
 

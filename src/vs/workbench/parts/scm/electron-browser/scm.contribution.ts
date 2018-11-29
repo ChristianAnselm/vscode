@@ -35,7 +35,7 @@ class OpenSCMViewletAction extends ShowViewletAction {
 }
 
 Registry.as<IWorkbenchContributionsRegistry>(WorkbenchExtensions.Workbench)
-	.registerWorkbenchContribution(DirtyDiffWorkbenchController, LifecyclePhase.Restored);
+	.registerWorkbenchContribution(DirtyDiffWorkbenchController, LifecyclePhase.Running);
 
 const viewletDescriptor = new ViewletDescriptor(
 	SCMViewlet,
@@ -49,10 +49,10 @@ Registry.as<ViewletRegistry>(ViewletExtensions.Viewlets)
 	.registerViewlet(viewletDescriptor);
 
 Registry.as<IWorkbenchContributionsRegistry>(WorkbenchExtensions.Workbench)
-	.registerWorkbenchContribution(StatusUpdater, LifecyclePhase.Restored);
+	.registerWorkbenchContribution(StatusUpdater, LifecyclePhase.Running);
 
 Registry.as<IWorkbenchContributionsRegistry>(WorkbenchExtensions.Workbench)
-	.registerWorkbenchContribution(StatusBarController, LifecyclePhase.Restored);
+	.registerWorkbenchContribution(StatusBarController, LifecyclePhase.Running);
 
 // Register Action to Open Viewlet
 Registry.as<IWorkbenchActionRegistry>(WorkbenchActionExtensions.WorkbenchActions).registerWorkbenchAction(
